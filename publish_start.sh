@@ -32,7 +32,7 @@ if [[ -f $offpidfi ]]; then
 fi
 
 errcho "[$me] Starting online stream..."
-ffmpeg -loglevel warning -i $rtmpi -c copy -f mpegts pipe:1 > $pfi &
+ffmpeg -loglevel warning -i $rtmpi -c:v copy -c:a copy -f mpegts pipe:1 > $pfi &
 onpid=$!
 errcho "[$me] Online stream pid $onpid"
 echo $onpid > $onpidfi

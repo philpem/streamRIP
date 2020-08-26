@@ -33,4 +33,4 @@ cleanup(){
 trap cleanup EXIT
 
 errcho "[$me] Waiting for stream..."
-ffmpeg -loglevel warning -f mpegts -i $pfi -c copy -bsf:a aac_adtstoasc -f flv -rtmp_live live $rtmpe
+ffmpeg -loglevel warning -f mpegts -i $pfi -c:v copy -c:a copy -bsf:a aac_adtstoasc -f flv -rtmp_live live $rtmpe
